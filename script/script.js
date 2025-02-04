@@ -26,20 +26,36 @@
 
 
   //11
-  window.addEventListener('scroll', function() {
-    const header = document.getElementById('mainHeader');
-    if (window.scrollY > 50) {
-        header.classList.add('small-header');
-    } else {
-        header.classList.remove('small-header');
-    }
-});
 
-// فتح وإغلاق القائمة الجانبية
-function toggleMenu() {
-    const sideMenu = document.getElementById('sideMenu');
-    sideMenu.classList.toggle('open');
-}
+   
+      
+  
+  
+          // فتح وإغلاق القائمة الجانبية مع تأثير الهمبرجر
+          function toggleMenu() {
+              const sideMenu = document.getElementById('sideMenu');
+              const menuIcon = document.getElementById('menuIcon');
+  
+              // تبديل حالة الفتح والإغلاق
+              sideMenu.classList.toggle('open');
+              menuIcon.classList.toggle('open');
+          }
+  
+          // إغلاق القائمة عند النقر خارجها
+          document.addEventListener('click', function(event) {
+              const sideMenu = document.getElementById('sideMenu');
+              const menuIcon = document.getElementById('menuIcon');
+  
+              if (
+                  !sideMenu.contains(event.target) && // إذا لم يكن النقر داخل القائمة
+                  !menuIcon.contains(event.target) && // إذا لم يكن النقر على أيقونة القائمة
+                  sideMenu.classList.contains('open') // إذا كانت القائمة مفتوحة
+              ) {
+                  sideMenu.classList.remove('open');
+                  menuIcon.classList.remove('open');
+              }
+          });
+     
 
 //22
 document.addEventListener('DOMContentLoaded', function () {
