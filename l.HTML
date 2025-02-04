@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ماركتنج لاب</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        /* إضافة الخطوط المخصصة */
+        @font-face {
+            font-family: 'Hanimation Arabic';
+            src: url('fonts/hanimation-arabic-63b2b157b6.woff2') format('woff2'),
+                 url('fonts/hanimation-arabic-63b2b157b6.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Almarai';
+            src: url('fonts/Almarai-Regular.woff2') format('woff2'),
+                 url('fonts/Almarai-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+         
+        *{
+            scroll-behavior: smooth;
+        }
+        /* إعدادات الخطوط والألوان */
+        body {
+            scroll-behavior: smooth;
+            margin: 0;
+            font-family: 'Almarai', sans-serif;
+            background: linear-gradient(to bottom, #7656A3, #5066AE);
+            color: white;
+            padding: 0;
+            scroll-behavior: smooth; /* التمرير السلس */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Hanimation Arabic', sans-serif;
+        }
+
+        /* رأس الصفحة */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            box-sizing: border-box;
+           
+            top: 0;
+            backdrop-filter: blur(5px);
+            z-index: 10;
+            transition: all 0.3s ease; /* تأثير تصغير الهيدر */
+        }
+
+        header.small-header {
+            padding: 10px 50px; /* تصغير الهيدر */
+        }
+
+        header img {
+            height: auto;
+            width: 150px;
+            transition: all 0.3s ease; /* تأثير تصغير الشعار */
+        }
+
+        header.small-header img {
+            width: 120px; /* تصغير الشعار */
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+            margin-left: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        .booking-button {
+            text-decoration: none;
+            background-color: white;
+            color: #5066AE;
+            padding: 10px 30px;
+            font-size: 22px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .booking-button:hover {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* القائمة الجانبية */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 250px;
+            height: 100vh;
+            background-color: white;
+            color: #333;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transition: right 0.3s ease;
+            z-index: 20;
+        }
+
+        .side-menu.open {
+            right: 0;
+        }
+
+        .side-menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .side-menu a:hover {
+            color: #7656A3;
+        }
+
+        .close-btn {
+            align-self: flex-end;
+            font-size: 24px;
+            cursor: pointer;
+            color: #7656A3;
+        }
+
+        /* قسم الصفحة الرئيسية */
+        section.home {
+            gap: 110px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .home .content {
+            max-width: 45%;
+        }
+
+        .home h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .home p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .home .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .home .buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background: white;
+            color: #5066AE;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .home .buttons a:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .home .illustration img {
+            max-width: 85%;
+            height: auto;
+        }
+
+       
+        
+        
+
+        /* تحسينات على الشاشات المتوسطة (أجهزة لوحية) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .home h1 {
+                font-size: 36px;
+            }
+
+            .home p {
+                font-size: 16px;
+            }
+
+            .home .buttons a {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+
+            .home .illustration img {
+                max-width: 70%;
+            }
+
+            .marketing h2 {
+                font-size: 28px;
+            }
+
+            .marketing p {
+                font-size: 16px;
+            }
+        }
+
+        /* تحسينات على الشاشات بين المتوسط والصغير (أجهزة لوحية صغيرة) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .home h1 {
+                font-size: 32px;
+            }
+
+            .home p {
+                font-size: 15px;
+            }
+
+            .home .buttons a {
+                font-size: 15px;
+                padding: 8px 16px;
+            }
+
+            .home .illustration img {
+                max-width: 60%;
+            }
+
+            .marketing h2 {
+                font-size: 24px;
+            }
+
+            .marketing p {
+                font-size: 14px;
+            }
+        }
+
+        /* تحسينات على الشاشات الصغيرة (جوال) */
+        @media (max-width: 480px) {
+            header img {
+                width: 100px;
+            }
+
+            .home .buttons {
+                display: flex;
+                transform: translate(0px, 19rem);
+                flex-direction: column;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .menimg {
+                height: auto;
+                width: 100px;
+                transform: translateX(30px);
+            }
+
+            .home .buttons a {
+                text-decoration: none;
+                padding: 10px 20px;
+                background: transparent;
+                color: white;
+                font-size: 18px;
+                font-weight: bold;
+                border: 2px solid white;
+                width: 80%;
+                transition: background 0.3s ease, transform 0.3s ease;
+                transform: translateY(31px);
+            }
+
+            .home .buttons a:hover {
+                background-color: white;
+                color: #5066AE;
+            }
+
+            #vis {
+                visibility: visible !important;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .booking-button {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            section.home {
+                flex-direction: column;
+                text-align: center;
+                height: auto;
+                padding: 20px;
+            }
+
+            .home .content {
+                max-width: 100%;
+            }
+
+            .home h1 {
+                font-size: 36px;
+            }
+
+            .home p {
+                font-size: 16px;
+            }
+
+            .home .illustration img {
+                max-width: 80%;
+                transform: translateY(-126px);
+            }
+
+           
+        }
+    </style>
+</head>
+
+<body>
+    <!-- رأس الصفحة -->
+    <header id="mainHeader">
+        <img src="image/Rectangle 17 (1).png" alt="شعار ماركتنج لاب">
+        <nav>
+            <a href="#services">الخدمات</a>
+            <a href="#experience">الخبرات</a>
+            <a href="#contact">التواصل</a>
+        </nav>
+        <a href="https://wa.me/783950649"class="booking-button">احجز الآن</a>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <!-- القائمة الجانبية -->
+    <div class="side-menu" id="sideMenu">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <img src="image/Rectangle 30.png" class="menimg" alt="شعار ماركتنج لاب">
+        <a href="#services">الخدمات</a>
+        <a href="#experience">الخبرات</a>
+        
+        <a href="#contact">التواصل</a>
+    </div>
+
+    <!-- قسم الصفحة الرئيسي -->
+    <section class="home">
+        <div class="content">
+            <h1>استراتيجيات ذكية ونتائج ملموسة</h1>
+            <p>
+                مرحباً بك في ماركتنج لاب، شريكك الأمثل لتحويل أفكارك إلى استراتيجيات ناجحة.
+                حيث نقوم بصناعة الحلول التسويقية التي تساعد مشروعك على النمو.
+                ونوفر لك استشارات مخصصة لتحقق أهدافك بفعالية وابتكار.
+                دعنا نأخذ بيدك نحو عالم من النجاح والاستدامة.
+            </p>
+            <div class="buttons">
+                <a href="#experience">أعرف أكثر</a>
+                <a href="https://wa.me/783950649" style="visibility: hidden;" id="vis">احجز استشارة</a>
+                
+            </div>
+        </div>
+        <div class="illustration">
+            <img src="image/Rectangle 19 (1).png" alt="رسم توضيحي للسقاية">
+        </div>
+    </section>
+
+    <!-- قسم جديد من Frame 68 -->
+  
+    
+    <style>
+        /* إعدادات عامة */
+   
+        /* قسم التسويق */
+        section.marketing {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            width: 100%;
+            min-height: 400px; /* لجعل القسم يأخذ مساحة كاملة */
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        section.marketing .content {
+            height: 90%;
+            flex: 1;
+            padding-right: 20px;
+            color: #333; /* لون النص */
+        }
+
+        section.marketing .illustration {
+            flex: 1;
+            text-align: center;
+        }
+
+        section.marketing .illustration img {
+            height: auto;
+    border-radius: 4px;
+    width: 430px;
+        }
+
+        section.marketing h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #5066AE; /* لون العنوان */
+        }
+
+        section.marketing p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333; /* لون النص */
+        }
+
+        /* تحسينات على الشاشات المتوسطة (أجهزة لوحية) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            section.marketing {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            section.marketing .content {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            section.marketing .illustration {
+                text-align: center;
+            }
+        }
+
+        /* تحسينات على الشاشات الصغيرة (جوال) */
+        @media (max-width: 768px) {
+            section.marketing {
+                flex-direction: column;
+                text-align: center;
+               
+            }
+
+            section.marketing .content {
+                padding-right: 0;
+                
+            }
+
+            section.marketing .illustration img {
+               
+                max-width: 100%;
+            }
+
+            section.marketing h2 {
+                font-size: 28px;
+            }
+
+            section.marketing p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- قسم التسويق -->
+    <section id="experience" class="marketing" id="marketingSection">
+        <div class="content">
+            <h2>تعرف على خبيرة الاستشارات التسويقية</h2>
+            <p>
+                إسراء السقاف هي مؤسسة ومقدمة الخدمة في ماركتينج لاب، وتُعتبر من أبرز الاستشاريين في مجال إعداد المشروعات الصغيرة والمتوسطة. تتمتع بخبرة تزيد عن 13 عامًا، حيث تعمل بشغف لمساعدة عملائها في تجاوز التحديات.
+            </p>
+
+            <p>
+                تُركز إسراء على تحليل المشكلات التي تعيق نمو الأعمال، وتطوير استراتيجيات محتوى مخصصة تلبي احتياجات كل عميل. من خلال منهجها التحليلي، تضمن أن يحصل كل مشروع على الدعم اللازم لتحقيق أهدافه.
+            </p>
+            
+            <p>خلال مسيرتها، تعاونت إسراء مع العديد من المنظمات المحلية والدولية، مثل منظمة كير وأوكسفام، بالإضافة إلى مؤسسات محلية مثل مؤسسة لأجل الجميع وآفاق شبابية ومؤسسة SOS للتنمية وتمدين شباب ومؤسسة بناء.</p>
+ 
+
+            <p>تسعى إسراء دائمًا لتقديم حلول مبتكرة ومستدامة، مما يمكّن عملائها من تحقيق نجاحات ملموسة في عالم الأعمال المتغير. من خلال خبرتها وشغفها، تلتزم بتقديم استشارات تسويقية فعالة تدعم النمو وتفتح آفاق جديدة للمشروعات.</p>
+        </div>
+        <div class="illustration">
+            <img src="image/Rectangle 27.png" alt="رسم توضيحي للتسويق">
+        </div>
+    </section>
+    <section class="expertise" id="expertiseSection">
+        <style>
+          /* تصميم قسم الخبرات */
+          section.expertise {
+            background-color: #f7f7fc;
+            text-align: center;
+            padding: 50px 20px;
+            color: #333;
+          }
+      
+          .expertise .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* المحاذاة من الأعلى */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+          }
+      
+          .expertise .item {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            text-align: center; /* توسيط المحتوى */
+          }
+      
+          .expertise .item .image-number {
+            display: flex;
+            align-items: center; /* توسيط الصورة والرقم عموديًا */
+            justify-content: center; /* توسيط الصورة والرقم أفقيًا */
+            gap: 10px; /* المسافة بين الصورة والرقم */
+            margin-bottom: 15px; /* مسافة بين الصورة/الرقم والنص */
+          }
+      
+          .expertise .item img {
+            max-width: 50px; /* تصغير حجم الصورة */
+            height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+          }
+      
+          .expertise .item h3 {
+            font-size: 36px;
+            color: #5066AE;
+            margin: 0; /* إزالة الهوامش السفلية */
+            display: flex; /* لجعل الرقم وعلامة + في نفس السطر */
+            align-items: center; /* توسيط الرقم وعلامة + عموديًا */
+          }
+      
+          .expertise .item h3 .plus {
+            font-size: 24px; /* حجم علامة + */
+            margin-left: 5px; /* مسافة بين الرقم وعلامة + */
+          }
+      
+          .expertise .item p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+            margin-top: 10px; /* مسافة بين الرقم والنص */
+          }
+      
+          /* تحسينات للشاشات الصغيرة */
+          @media (max-width: 768px) {
+            .expertise .container {
+              flex-direction: column;
+              align-items: center;
+            }
+      
+            .expertise .item {
+              margin-bottom: 30px;
+            }
+          }
+        </style>
+      
+        <div class="container">
+          <!-- العنصر الأول -->
+          <div class="item">
+            <div class="image-number">
+              <img src="image/Stack.png" alt="خبرة طويلة">
+              <h3 data-target="13"><span class="plus">+</span></h3>
+            </div>
+            <p>خبرة طويلة في مجال تطوير المشروعات والاستشارات التسويقية.</p>
+          </div>
+      
+          <!-- العنصر الثاني -->
+          <div class="item">
+            <div class="image-number">
+              <img src="image/Briefcase.png" alt="عدد المستفيدين">
+              <h3 data-target="2000"><span class="plus">+</span></h3>
+            </div>
+            <p>عدد المستفيدين من التدريبات والاستشارات الاستراتيجية.</p>
+          </div>
+      
+          <!-- العنصر الثالث -->
+          <div class="item">
+            <div class="image-number">
+              <img src="image/SmileyWink.png" alt="عدد الجهات">
+              <h3 data-target="15"><span class="plus">+</span></h3>
+            </div>
+            <p>عدد الجهات والمنظمات المحلية والدولية البارزة.</p>
+          </div>
+        </div>
+      </section>
+      <!-- زر العودة إلى الأعلى -->
+</style>
+      <script>
+        // دالة لتنفيذ تأثير العد التصاعدي
+        function startCounting() {
+          const counters = document.querySelectorAll('.expertise .item h3');
+      
+          counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target'); // القيمة النهائية
+            const increment = target / 100; // زيادة تدريجية
+            let current = 0;
+      
+            const updateCounter = () => {
+              if (current < target) {
+                current += increment;
+                counter.querySelector('span').textContent = Math.ceil(current) + "+"; // تحديث الرقم مع علامة +
+                setTimeout(updateCounter, 20); // سرعة العد
+              } else {
+                counter.querySelector('span').textContent = target + "+"; // التأكد من الوصول للقيمة النهائية
+              }
+            };
+      
+            updateCounter();
+          });
+        }
+      
+        // بدء العد عند تحميل الصفحة
+        window.onload = startCounting;
+      </script>
+    <script>
+        // تصغير الهيدر عند التمرير
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('small-header');
+            } else {
+                header.classList.remove('small-header');
+            }
+        });
+
+        // فتح وإغلاق القائمة الجانبية
+        function toggleMenu() {
+            const sideMenu = document.getElementById('sideMenu');
+            sideMenu.classList.toggle('open');
+        }
+    </script>
+    
+
+
+
+    <section id="services" class="articles-section" id="articlesSection">
+        <style>
+          /* تصميم قسم المقالات */
+          /*ffffffffffff*/
+          .articles-section {
+            background-color: #f7f7fc;
+            padding: 50px 20px;
+            color: white;
+            text-align: center;
+          }
+      
+          .articles-section h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            font-family: 'Hanimation Arabic', sans-serif;
+          }
+      
+          .articles-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+          }
+      
+          .article-card {
+            background: linear-gradient(to bottom, #7656A3, #5066AE);
+            color: white;
+            border-radius: 7px;
+           /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*/
+            max-width: 350px;
+            min-width: 300px;
+            padding: 20px;
+            text-align: right;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+          }
+      
+          .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+          }
+      
+          .article-card h3 {
+            font-size: 22px;
+            color: white;
+            margin-bottom: 15px;
+          }
+      
+          .article-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+          }
+      
+          .article-card .price {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+          }
+      
+          .article-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+          }
+      
+          .article-card ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+          }
+      
+          .article-card ul li img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            transform: translate(7px);
+          }
+      
+          .article-card img.illustration {
+            
+            right: 20px;
+            width: 184px;
+            height: auto;
+          }
+      
+          .article-card button {
+            background: white;
+            color: #5066AE;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+          }
+      
+          .article-card button:hover {
+            background: #f0f0f0;
+          }
+      
+          /* تحسينات للشاشات الصغيرة */
+          @media (max-width: 768px) {
+            .articles-container {
+              flex-direction: column;
+              align-items: center;
+            }
+      
+            .article-card img.illustration {
+              width: 184px;
+        transform: translate(-20px, 34px) !important;
+              bottom: 10px;
+              right: 10px;
+            }
+            .article-card img.illustration.tezt {
+            transform: translate(-25px, 34px) !important;
+          }
+          }
+           /* تصميم الـ Popup */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+           
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            width: 45%;
+    height: auto;
+        }
+
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #5066AE;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .popup-content img {
+            
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .close-btn:hover {
+            background-color: #7656A3;
+        }
+         
+          
+        </style>
+      
+      <h1 style="color: #333;" >الخدمات التي نقدمها</h1>
+        <div class="articles-container">
+      
+          <!-- المقالة الأولى -->
+          <div class="article-card">
+            <h3>بناء استراتيجية محتوى مميزة</h3>
+            <div class="price">$50 :السعر</div>
+            <ul>
+              <li><img src="image/Group 2.png" alt="">تحليل صفحتك على فيسبوك لتحديد نقاط القوة والضعف.
+              </li>
+              <li><img src="image/Group 2.png" alt=""> إعداد خطة محتوى شهرية تشمل 15 منشوراً قابلاً للتكرار.</li>
+              <li><img src="image/Group 2.png" alt=""> تعتمد على القمع البيعي.</li>
+              <li><img src="image/Group 2.png" alt=""> تقديم نصائح وأدوات لصناعة المحتوى.</li>
+              <li><img src="image/Group 2.png" alt=""> جلسة نقاش الخطة لمدة 30 دقيقة مع الإجابة عن استفساراتك.</li>
+            </ul>
+            <button onclick="showPopup('contentStrategy')">اعرف أكثر</button>
+            <img src="image/Rectangle 26 (1).png" style="transform: translate(-74px, 34px)" alt="رسم توضيحي" class="illustration">
+          </div>
+      
+          <!-- المقالة الثانية -->
+          <div class="article-card">
+            <h3>استشارة تسويقية مخصصة</h3>
+            <div class="price">$30 :السعر</div>
+            <ul>
+              <li><img src="image/Group 2.png" alt=""> تحديد جمهورك المستهدف بدقة.</li>
+              <li><img src="image/Group 2.png" alt=""> حلول للتغلب على المنافسين وبناء علامة تجارية قوية.</li>
+              <li><img src="image/Group 2.png" alt=""> دعم للبدء بمشروعك أو تسويق مهاراتك وخبراتك.</li>
+              <li><img src="image/Group 2.png" alt=""> تصميم ملف تفصيلي للحلول بعد الجلسة.</li>
+            </ul>
+            
+            <button onclick="showPopup('consultation')">اعرف أكثر</button>
+            <img src="image/Rectangle 21.png" style="transform: translate(-85px, 84px)" alt="رسم توضيحي" class="illustration tezt">
+          </div>
+      
+        </div>
+       
+      
+       <!-- Popup Overlay -->
+    <div class="popup-overlay" id="popupOverlay">
+      <div class="popup-content">
+          <button class="close-btn" onclick="closePopup()">×</button>
+          <img id="popupImage" src="" alt="Popup Image">
+      </div>
+  </div>
+  <script>
+    const popupOverlay = document.getElementById('popupOverlay');
+    const popupImage = document.getElementById('popupImage');
+
+    const articleImages = {
+        contentStrategy: "media/Service Details 1 (5).png", // ضع هنا رابط الصورة الأولى
+        consultation: "media/Service Details 2 (5).png" // ضع هنا رابط الصورة الثانية
+    };
+
+    function showPopup(article) {
+        const imageUrl = articleImages[article];
+        popupImage.src = imageUrl;
+        popupOverlay.style.display = 'flex';
+    }
+
+    function closePopup() {
+        popupOverlay.style.display = 'none';
+    }
+</script>
+
+<!-- قسم السلايدر -->
+<section class="slider-section" style="background-color: #F5F2FF;">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="image/Block 2 (1).png" alt="صورة 1"></div>
+            <div class="swiper-slide"><img src="image/Block 2.png" alt="صورة 2"></div>
+            <div class="swiper-slide"><img src="image/Block 5.png" alt="صورة 3"></div>
+            <div class="swiper-slide"><img src="image/Block 6.png" alt="صورة 4"></div>
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            speed: 1000,
+            spaceBetween: 20, /* المسافة بين الصور */
+            centeredSlides: true,
+            breakpoints: {
+                // عندما يكون عرض الشاشة >= 1200px
+                1200: {
+                    slidesPerView: 3, // 3 صور
+                },
+                // عندما يكون عرض الشاشة >= 768px
+                768: {
+                    slidesPerView: 2, // صورتين
+                },
+                // عندما يكون عرض الشاشة < 768px
+                0: {
+                    slidesPerView: 1, // صورة واحدة
+                },
+            },
+            on: {
+                init: function () {
+                    this.el.addEventListener('mouseenter', function () {
+                        swiper.autoplay.stop();
+                    });
+                    this.el.addEventListener('mouseleave', function () {
+                        swiper.autoplay.start();
+                    });
+                },
+            },
+        });
+    });
+</script>
+
+<style>
+    /* التنسيقات العامة */
+    .slider-section {
+        margin: 75px 0;
+        padding: 20px 0;
+        background-color: #F5F2FF;
+        overflow: hidden; /* لمنع خروج المحتوى من القسم */
+       
+       
+    }
+
+    .swiper-container {
+        width: 100%;
+        
+        height: auto;
+        margin: 0 auto;
+        overflow: hidden; /* لمنع خروج الصور من الحاوية */
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* تأكد من أن العرض يتناسب مع الحاوية */
+        height: auto;
+    }
+
+    .swiper-slide img {
+        max-width: 100%; /* الصور لن تتجاوز عرض الحاوية */
+        height: auto; /* الحفاظ على نسبة الطول إلى العرض */
+        border-radius: 10px;
+    }
+
+    .swiper-slide:hover {
+        cursor: pointer;
+    }
+</style>
+
+<style>
+        
+
+    .contact-section {
+        width: 100%;
+        padding: 50px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-container {
+        width: 85%;
+        max-width: 1300px;
+        background: linear-gradient(to bottom, #7656A3, #5066AE);
+        padding: 40px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+    }
+
+    .talk {
+        width: 50%;
+        transform: translateY(-15px);
+    }
+
+    .talk h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+
+    .talk p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .info {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        display: flex
+;
+    align-items: flex-start;
+    background: white;
+    color: #5066AE;
+    padding: 8px;
+    border-radius: 8px;
+    width: 85%;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    flex-direction: column;
+
+    }
+
+    .contact-item img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .contact-text {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contact-item p {
+        margin: 0;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 15px;
+    }
+
+    .social-icons a {
+        display: inline-block;
+    }
+
+    .social-icons a img {
+        width: 45px;
+        height: 45px;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons a img:hover {
+        transform: scale(1.2);
+    }
+
+    .button {
+        display: inline-block;
+        background: white;
+        color: #5066AE;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        text-decoration: none;
+        margin-top: 20px;
+    }
+
+    .button:hover {
+        background: #e0e0f0;
+    }
+
+    @media (max-width: 768px) {
+        .contact-container {
+            flex-direction: column;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .talk, .info {
+            width: 100%;
+            text-align: center;
+        }
+
+        .contact-item {
+            width: 90%;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+        }
+    }
+</style>
+</head>
+<body>
+<section id="contact" class="contact-section">
+    <div class="contact-container">
+        <div class="talk">
+            <h1>دعنا نعمل معًا لتحقيق نجاح مشروعك!</h1>
+            <p>سواء كنت تبحث عن استشارة تسويقية أو ترغب في بناء استراتيجية محتوى مميزة، نحن هنا لدعمك بكل خبرتنا واهتمامنا بالتفاصيل لتحقيق أهدافك بنجاح.</p>
+            <a href="https://wa.me/783950649" class="button">تواصل معي عبر</a>
+        </div>
+        <div class="info">
+            <div class="contact-item">
+                <div class="contact-text">
+                    <img src="media/PhoneCall (1).png" alt="Phone">
+                    <p>رقم الهاتف</p>
+                </div>
+                <p>783950649</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-text">
+                    <img src="media/Envelope.png" alt="Email">
+                    <p>البريد الإلكتروني</p>
+                </div>
+                <p>isra.saqqaf@gmail.com</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/israa.alsaqqaf?mibextid=ZbWKwL" target="_blank"><img src="media/Social Media (5).png" alt="Facebook"></a>
+                <a href="https://wa.me/783950649" target="_blank"><img src="media/Social Media (4).png" alt="WhatsApp"></a>
+                <a href="https://www.instagram.com/isra.saqqaf?igsh=MWpvNTlqZmZ5OXM0ag==" target="_blank"><img src="media/Social Media (2).png" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/isra-saqqaf-51492822a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="media/Social Media (3).png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+<footer>
+    <hr>
+    <div class="links">
+        <img src="media/Frame 120.png" alt="Logo">
+        <a href="#services">الخدمات</a>
+        <a href="#experience">الخبرات</a>
+        <a href="#contact">التواصل</a>
+        <span>© 2025 Marketing lab</span>
+    </div>
+    <div class="rigth">
+        <p>تصميم وتطوير</p>
+        <img src="media/Rectangle 29.png" alt="Company Logo">
+    </div>
+</footer>
+
+<style>
+    footer {
+        background-color: white;
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    hr {
+        border: none;
+        height: 1px;
+        background-color: #ccc;
+        margin: 10px 0;
+        opacity: 0.6; /* لتخفيف اللون */
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+        padding: 10px 20px;
+        flex-wrap: wrap; /* لتسهيل التكيف مع الشاشات الصغيرة */
+        gap: 10px; /* إضافة مسافة بين العناصر عند الالتفاف */
+    }
+
+    .links img, .rigth img {
+        width: 100px; /* تصغير حجم الصور */
+        height: auto;
+    }
+
+    .links a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: black;
+        font-size: 14px; /* تصغير حجم النص */
+    }
+
+    .links span {
+        font-size: 12px;
+        color: #555;
+    }
+
+    .rigth {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    .rigth p {
+        margin-left: 10px;
+        color: black;
+        font-size: 14px; /* تصغير حجم النص */
+    }
+
+    /* تصميم للشاشات الصغيرة */
+    @media (max-width: 768px) {
+        .links {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rigth {
+            flex-direction: column;
+        }
+
+        .rigth p {
+            margin-left: 0;
+            margin-bottom: 5px;
+        }
+    }
+
+    /* تصميم للشاشات الكبيرة */
+    @media (min-width: 769px) {
+        .links {
+            flex-direction: row;
+        }
+
+        .rigth {
+            flex-direction: row;
+        }
+    }
+</style>
+</body>
+</html>
