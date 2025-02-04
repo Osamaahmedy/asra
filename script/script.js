@@ -99,8 +99,8 @@ const popupOverlay = document.getElementById('popupOverlay');
     const popupImage = document.getElementById('popupImage');
 
     const articleImages = {
-        contentStrategy: "image/Service Details 1 (4).png", // ضع هنا رابط الصورة الأولى
-        consultation: "image/Service Details 2 (4).png" // ضع هنا رابط الصورة الثانية
+        contentStrategy: "media/Service Details 1.svg", // ضع هنا رابط الصورة الأولى
+        consultation: "media/Service Details 2.svg" // ضع هنا رابط الصورة الثانية
     };
 
     function showPopup(article) {
