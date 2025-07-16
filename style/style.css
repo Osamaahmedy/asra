@@ -264,7 +264,14 @@ section.home {
     header img {
         width: 100px;
     }
-
+.popup-content img{
+    width: 200% !important;
+        transform: translateX(81px);
+}
+.close-btn{
+            transform: translate(79px, -1px) !important ;
+        z-index: 1;
+}
     .home .buttons {
         display: flex;
         transform: translate(0px, 17.5rem);
@@ -319,6 +326,7 @@ section.home {
         text-align: center;
         height: auto;
         padding: 20px;
+        transform: translateY(-32px);
     }
 
     .home .content {
@@ -335,7 +343,7 @@ section.home {
 
     .home .illustration img {
         max-width: 80%;
-        transform: translateY(-126px);
+        transform: translateY(-226px);
     }
 
    
@@ -605,7 +613,7 @@ section.home {
           /* تحسينات للشاشات الصغيرة */
           @media (max-width: 768px) {
             .article-card{
-                width:20rem ;
+                width:19rem ;
             }
             .articles-container {
               flex-direction: column;
