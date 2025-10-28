@@ -100,7 +100,7 @@ const popupOverlay = document.getElementById('popupOverlay');
 
     const articleImages = {
         contentStrategy: "media/Service Details 1.svg", // ضع هنا رابط الصورة الأولى
-        consultation: "media/Service Details 2.svg" // ضع هنا رابط الصورة الثانية
+        consultation: "media/Service.svg" // ضع هنا رابط الصورة الثانية
     };
 
     function showPopup(article) {
